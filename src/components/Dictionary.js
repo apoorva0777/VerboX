@@ -5,6 +5,7 @@ import SearchBox from "./SearchBox";
 import WordResult from "./WordResult";
 import BookmarksPage from "./BookmarksPage";
 import ErrorMessage from "./ErrorMessage";
+import ChatBot from "./ChatBot";
 import { useDictionary } from "../hooks/useDictionary";
 import { useLocalStorage } from "../hooks/useLocalStorage";
 
@@ -31,7 +32,11 @@ function Dictionary({ onBackHome, darkMode, setDarkMode }) {
     if (isBookmarked) {
       setBookmarks(bookmarks.filter(b => b.word !== data.word));
     } else {
-      setBookmarks([...bookmarks, data]);
+      const bookmarkData = {
+        ...data,
+        dateAdded: Date.now()
+      };
+      setBookmarks([...bookmarks, bookmarkData]);
     }
   };
 
@@ -41,6 +46,10 @@ function Dictionary({ onBackHome, darkMode, setDarkMode }) {
     setCurrentView("search");
     // We can also set the data directly to avoid re-fetching
     searchWord(item.word);
+  };
+
+  const handleRemoveBookmark = (word) => {
+    setBookmarks(bookmarks.filter(b => b.word !== word));
   };
 
   const isBookmarked = data && bookmarks.some(b => b.word === data.word);
@@ -78,11 +87,14 @@ function Dictionary({ onBackHome, darkMode, setDarkMode }) {
               />
             )}
           </>
-        ) : (
+        ) : currentView === "bookmarks" ? (
           <BookmarksPage 
             bookmarks={bookmarks}
             onWordSelect={handleWordSelect}
+            onRemoveBookmark={handleRemoveBookmark}
           />
+        ) : (
+          <ChatBot />
         )}
       </main>
 

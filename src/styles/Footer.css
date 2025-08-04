@@ -1,0 +1,12 @@
+/* Footer */
+.app-footer {
+  padding: 1rem;
+  text-align: center;
+  background-color: var(--primary-color);
+  color: white;
+  font-size: 0.9rem;
+}
+
+.dark-mode .app-footer {
+  background-color: var(--secondary-color);
+}

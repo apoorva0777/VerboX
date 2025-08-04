@@ -1,0 +1,17 @@
+/* CSS Variables */
+:root {
+  /* Light Mode Colors */
+  --primary-color: #2c3e50;
+  --secondary-color: #34495e;
+  --accent-color: #3498db;
+  --text-light: #2c3e50;
+  --bg-light: #f5f7fa;
+  --card-light: #ffffff;
+  --border-light: #dfe6e9;
+  
+  /* Dark Mode Colors */
+  --text-dark: #f8f9fa;
+  --bg-dark: #212529;
+  --card-dark: #343a40;
+  --border-dark: #495057;
+}

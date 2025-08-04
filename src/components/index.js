@@ -6,3 +6,4 @@ export { default as SearchBox } from './SearchBox';
 export { default as WordResult } from './WordResult';
 export { default as BookmarksPage } from './BookmarksPage';
 export { default as ErrorMessage } from './ErrorMessage';
+export { default as ChatBot } from './ChatBot';

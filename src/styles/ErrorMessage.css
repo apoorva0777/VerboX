@@ -1,0 +1,15 @@
+/* Error Message */
+.error-message {
+  padding: 1rem;
+  background-color: #ffecec;
+  color: #e74c3c;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  border-left: 4px solid #e74c3c;
+}
+
+.dark-mode .error-message {
+  background-color: rgba(231, 76, 60, 0.2);
+  color: #ff8787;
+  border-left-color: #ff6b6b;
+}

@@ -1,0 +1,153 @@
+/* Home Page Styles */
+.home-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 2rem;
+  text-align: center;
+}
+
+.dark-mode .home-container {
+  background: linear-gradient(135deg, #2c3e50 0%, #1a1a2e 100%);
+}
+
+.hero-content {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.dark-mode .hero-content {
+  background-color: rgba(33, 37, 41, 0.9);
+}
+
+.book-animation {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  margin-bottom: 2rem;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+  animation: float 3s ease-in-out infinite;
+}
+
+.dark-mode .book-animation {
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3)) 
+          brightness(0.95) 
+          contrast(1.1);
+}
+
+.app-title {
+  font-size: 3rem;
+  margin: 0 0 1rem 0;
+  color: #2c3e50;
+  font-family: 'Georgia', serif;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.dark-mode .app-title {
+  color: #f8f9fa;
+}
+
+.app-tagline {
+  font-size: 1.2rem;
+  color: #4a5568;
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.dark-mode .app-tagline {
+  color: #e2e8f0;
+}
+
+.cta-button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(50, 152, 219, 0.3);
+}
+
+.cta-button:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(50, 152, 219, 0.4);
+}
+
+.home-theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: #2c3e50;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.dark-mode .home-theme-toggle {
+  background: rgba(0, 0, 0, 0.3);
+  color: #f8f9fa;
+}
+
+.home-theme-toggle:hover {
+  transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.dark-mode .home-theme-toggle:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-content {
+    padding: 1.5rem;
+  }
+  
+  .app-title {
+    font-size: 2.5rem;
+  }
+  
+  .book-animation {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-container {
+    padding: 1rem;
+  }
+  
+  .app-title {
+    font-size: 2rem;
+  }
+  
+  .app-tagline {
+    font-size: 1rem;
+  }
+  
+  .cta-button {
+    padding: 10px 24px;
+    font-size: 1rem;
+  }
+}

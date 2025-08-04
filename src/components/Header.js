@@ -1,5 +1,6 @@
 import React from "react";
 import { FaArrowLeft, FaMoon, FaSun } from "react-icons/fa";
+import '../styles/Header.css';
 
 function Header({ 
   onBackHome, 
@@ -27,6 +28,12 @@ function Header({
           className={currentView === "bookmarks" ? "active" : ""}
         >
           Bookmarks ({bookmarksCount})
+        </button>
+        <button 
+          onClick={() => setCurrentView("chat")}
+          className={currentView === "chat" ? "active" : ""}
+        >
+          AI Chat
         </button>
       </nav>
       <button 
