@@ -24,7 +24,7 @@ function ChatBot() {
   const [inputMessage, setInputMessage] = useState('');
   const [isExpanded, setIsExpanded] = useState(false);
   const [isRecording, setIsRecording] = useState(false);
-  // const [showQuickActions, setShowQuickActions] = useState(true);
+  const [showQuickActions, setShowQuickActions] = useState(true);
   const [messageRatings, setMessageRatings] = useState({});
   const { messages, loading, sendMessage, clearChat } = useChatbot();
   const messagesEndRef = useRef(null);
@@ -44,6 +44,10 @@ function ChatBot() {
   useEffect(() => {
     inputRef.current?.focus();
   }, []);
+
+  useEffect(() => {
+    setShowQuickActions(messages.length <= 1);
+  }, [messages.length]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
