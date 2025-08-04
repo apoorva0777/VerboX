@@ -24,7 +24,7 @@ function ChatBot() {
   const [inputMessage, setInputMessage] = useState('');
   const [isExpanded, setIsExpanded] = useState(false);
   const [isRecording, setIsRecording] = useState(false);
-  const [showQuickActions, setShowQuickActions] = useState(true);
+  // const [showQuickActions, setShowQuickActions] = useState(true);
   const [messageRatings, setMessageRatings] = useState({});
   const { messages, loading, sendMessage, clearChat } = useChatbot();
   const messagesEndRef = useRef(null);
@@ -189,7 +189,6 @@ function ChatBot() {
 
   return (
     <div className={`modern-chatbot-container ${isExpanded ? 'expanded' : ''}`}>
-      {/* Enhanced Header Section */}
       <div className="modern-chat-header">
         <div className="header-content">
           <div className="header-icon">
@@ -220,7 +219,6 @@ function ChatBot() {
         </div>
       </div>
 
-      {/* Quick Actions */}
       {showQuickActions && messages.length <= 1 && (
         <div className="quick-actions-section">
           <h3 className="section-title">Quick Actions</h3>
@@ -264,7 +262,7 @@ function ChatBot() {
         <div ref={messagesEndRef} />
       </div>
 
-      {/* Enhanced Input Section */}
+      
       <div className="modern-input-section">
         <form onSubmit={handleSubmit} className="modern-input-form">
           <div className="input-wrapper">
@@ -301,7 +299,7 @@ function ChatBot() {
           </div>
         </form>
         
-        {/* Input Tips */}
+       
         <div className="input-tips">
           <span className="tip">💡 Pro tip: Ask me to explain etymology, create examples, or help with grammar!</span>
         </div>
