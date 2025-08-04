@@ -454,6 +454,7 @@ body {
   background-color: rgba(255, 255, 255, 0.9);
   border-radius: 16px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  position: relative;
 }
 
 .dark-mode .hero-content {
@@ -520,6 +521,36 @@ body {
   box-shadow: 0 6px 12px rgba(50, 152, 219, 0.4);
 }
 
+.home-theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: #2c3e50;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.dark-mode .home-theme-toggle {
+  background: rgba(0, 0, 0, 0.3);
+  color: #f8f9fa;
+}
+
+.home-theme-toggle:hover {
+  transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.dark-mode .home-theme-toggle:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+
 /* Dictionary Styles */
 .dictionary-container {
   min-height: 100vh;
@@ -529,7 +560,7 @@ body {
   color: var(--text-light);
 }
 
-.dark-mode.dictionary-container {
+.dark-mode .dictionary-container {
   background-color: var(--bg-dark);
   color: var(--text-dark);
 }
@@ -608,4 +639,18 @@ body {
     padding: 10px 24px;
     font-size: 1rem;
   }
+}
+
+/* Loading Animation */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spinning {
+  animation: spin 1s linear infinite;
 }
